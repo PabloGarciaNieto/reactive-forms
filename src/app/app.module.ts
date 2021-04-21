@@ -5,7 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { BasicFormComponent } from './basic-form/basic-form.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +17,11 @@ import { BasicFormComponent } from './basic-form/basic-form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatChipsModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
