@@ -13,13 +13,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { NestedFromComponent } from './nested-from/nested-from.component';
 import { FormArrayComponent } from './form-array/form-array.component';
+import { FormValidationComponent } from './form-validation/form-validation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasicFormComponent,
     NestedFromComponent,
-    FormArrayComponent
+    FormArrayComponent,
+    FormValidationComponent
   ],
   imports: [
     BrowserModule,

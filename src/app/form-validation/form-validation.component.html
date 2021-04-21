@@ -1,0 +1,43 @@
+<div *ngIf="congrats" class="congrats">
+    Welcome!
+</div>
+<div *ngIf="!congrats">
+    <div class="title">
+        <h1>Reactive form Validation</h1>
+        Value: {{ validatedForm.value | json }}
+    </div>
+    <form [formGroup]="validatedForm" class="validated-form">
+        <div class="first-step">
+            <mat-form-field appearance="outline">
+                <mat-label>email</mat-label>
+                <input matInput placeholder="email" formControlName="email" autocomplete="off">
+                <mat-error *ngIf="email.invalid && email.touched">
+                    Don't forget the @ sign
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>password</mat-label>
+                <input matInput placeholder="password" formControlName="password">
+                <mat-error *ngIf="password.invalid && password.touched">
+                    That password is not secure enough
+                </mat-error>
+                <mat-hint align="end">At least one letter and one number</mat-hint>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>age</mat-label>
+                <input matInput placeholder="age" formControlName="age">
+                <mat-error *ngIf="age.errors?.min && age.touched">
+                    {{ age.errors.min.actual }} is too young to use this app kid!
+                </mat-error>
+                <mat-error *ngIf="age.errors?.max && age.touched">
+                    {{ age.errors.max.actual }} is too old to use this app gramps!
+                </mat-error>
+                <mat-hint align="end">Only numbers</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="second-step">
+            <mat-checkbox formControlName="agree" color="primary">Are you sure?</mat-checkbox>
+            <button mat-raised-button [disabled]="validatedForm.invalid" color="primary" (click)="letGo()">Let's go</button>
+        </div>
+    </form>
+</div>
