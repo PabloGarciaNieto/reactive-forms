@@ -17,7 +17,7 @@
     </div>
 </form> -->
 <div class="title">
-    <h2>Basic reactive form</h2>
+    <h1>Basic reactive form</h1>
     Value: {{ basicForm.value | json }}
 </div>
 <form [formGroup]="basicForm" class="basic-form">
@@ -27,7 +27,8 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
         <mat-label>message</mat-label>
-        <input matInput placeholder="message" formControlName="message">
+        <textarea matInput placeholder="message" formControlName="message">
+        </textarea>
     </mat-form-field>
     <mat-form-field appearance="outline">
         <mat-label>career</mat-label>
